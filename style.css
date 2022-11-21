@@ -1,0 +1,34 @@
+body {
+  background-color: black;
+}
+
+.center {
+  height: 90vh;
+  position: relative;
+}
+
+.typing {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  text-align: center;
+  inline-size: 90%;
+  overflow-wrap: break-word;
+  max-inline-size: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
