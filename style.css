@@ -32,3 +32,13 @@ input {
   position: absolute;
   left: -9999px;
 }
+
+@media only screen and (max-width: 600px) {
+  .typing {
+    font-size: 1.3rem;
+  }
+  .center {
+    height: 55vh;
+  }
+}
+
