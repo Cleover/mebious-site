@@ -1,6 +1,6 @@
 var commands = {
     "help": {
-        "message": "",
+        "message": " ",
         "function": function (args) {
             if (args.length == 0) commands.help.message = Object.keys(commands).join(", ");
             if (args.length == 1) commands.help.message = commands[args[0]].helpMessage;
@@ -20,30 +20,30 @@ var commands = {
         "helpMessage": "copyhelp - Displays the copy shortcut"
     },
     "encode": {
-        "message": "",
+        "message": " ",
         "function": function (args) {
-            commands.encode.message = shift_up(args[0]);
+            if (!args || args.length == 0) commands.encode.message = "Please enter a string to encode";
+            else commands.encode.message = shift_up(args[0]);
         },
         "helpMessage": "encode [text] - Encodes text"
     },
     "decode": {
-        "message": "",
+        "message": " ",
         "function": function (args) {
-            if (args[0]) {
-                commands.decode.message = shift_down(args[0]);
-            }
+            if (!args || args.length == 0) commands.decode.message = "Please enter a string to decode";
+            else commands.decode.message = shift_down(args[0]);
         },
         "helpMessage": "decode [text] - Decodes text"
     },
     "echo": {
-        "message": "",
+        "message": " ",
         "function": function (args) {
-            commands.echo.message = args.join(" ");
+            if (args && args.length > 0) commands.echo.message = args.join(" ");
         },
         "helpMessage": "echo [text] - Displays text"
     },
     "ls": {
-        "message": "",
+        "message": " ",
         "function": function () {
             commands.ls.message = Object.keys(files).join(", ");
         },
@@ -52,7 +52,7 @@ var commands = {
     "cat": {
         "message": "File Not Found",
         "function": function (args) {
-            if (files[args[0]] && files[args[0]].content) {
+            if (args || args.length > 0 && files[args[0]] && files[args[0]].content) {
                 commands.cat.message = files[args[0]].content;
             }
         },
