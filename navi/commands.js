@@ -8,8 +8,11 @@ var commands = {
         "helpMessage": "help [command] - Shows all commands or help for a specific command"
     },
     "whoami": {
-        "message": "you",
-        "helpMessage": "whoami - Displays the current user"
+        "message": " ",
+        "helpMessage": "whoami - Displays the current user",
+        "function": function () {
+            commands.whoami.message = user.name;
+        }
     },
     "pastehelp": {
         "message": "ctrl+v = paste",
@@ -58,6 +61,18 @@ var commands = {
         },
         "helpMessage": "cat [file] - Displays the contents of a file"
     },
+    "version": {
+        "message": " ",
+        "function": function () {
+            commands.version.message = info.version;
+        }
+    },
+    "hostname": {
+        "message": " ",
+        "function": function () {
+            commands.hostname.message = info.name;
+        }
+    }
     // "play": {
     //   "message": "",
     //   "set": [{
